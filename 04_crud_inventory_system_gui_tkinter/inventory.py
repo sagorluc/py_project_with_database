@@ -11,7 +11,7 @@ def reverse(tuples):
     new_tup = tuples[:: -1]
     return new_tup
 
-
+#=========================== insert ==============================
 def insertt(id , name, price, quantity):
     conn = sqlite3.connect('data_db')
     cursor = conn.cursor()
@@ -34,7 +34,7 @@ def delete(data):
     cursor.execute("DELETE FROM inventory WHERE itemId= '"+str(data)+"' ")
     conn.commit()
     
-    
+#============================ update =============================   
 def update(id, name, price, quantity, idname):
     conn = sqlite3.connect('data_db')
     cursor = conn.cursor()
@@ -51,7 +51,7 @@ def update(id, name, price, quantity, idname):
 
     conn.commit()
     
-    
+#============================ read =============================    
 def read():
     conn = sqlite3.connect('data_db')
     cursor = conn.cursor()
@@ -63,6 +63,7 @@ def read():
     conn.commit()
     return result
 
+#========================== insert data =========================
 def insert_data():
     
     item_id = str(id_entry.get())
@@ -94,7 +95,7 @@ def insert_data():
     my_tree.tag_configure('orow', background='#EEEEEE', font=('arial bold',15))
     my_tree.grid(row=1, column=5, columnspan=4, rowspan=5, padx=10, pady=10)
     
-
+#======================== delete data ============================
 def delete_data():
     select_item = my_tree.selection()[0]
     delete_d = str(my_tree.item(select_item)['values'][0])
@@ -110,7 +111,7 @@ def delete_data():
     my_tree.tag_configure('orow', background='#EEEEEE', font=('arial bold',15))
     my_tree.grid(row=1, column=5, columnspan=4, rowspan=5, padx=10, pady=10)
     
-
+#======================== update data ===========================
 def update_data():
      
     selet_data = my_tree.selection()[0]
