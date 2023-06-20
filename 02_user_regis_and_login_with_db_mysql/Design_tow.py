@@ -8,7 +8,7 @@ def center_window(width, height):
     y = (root.winfo_screenheight() // 2) - (height // 2)
     root.geometry(f'{width}x{height}+{x}+{y}')
  
- 
+#========================= makeing main window =================== 
 class WelcomeWindow(tk.Frame):
     def __init__(self, master):
         super().__init__()
@@ -36,7 +36,7 @@ class WelcomeWindow(tk.Frame):
         RegisterWindow(self.master)
  
  
- 
+#=========================== makeing log-in window ===============
 class LoginWindow(tk.Frame):
     def __init__(self, master):
         super().__init__()
@@ -80,7 +80,7 @@ class LoginWindow(tk.Frame):
         self.destroy()
         WelcomeWindow(self.master)
  
- 
+#==================== makeing registration window =================
 class RegisterWindow(tk.Frame):
     def __init__(self, master):
         super().__init__()

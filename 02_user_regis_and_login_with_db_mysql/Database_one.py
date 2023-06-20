@@ -1,5 +1,6 @@
 import mysql.connector 
  
+ #==================== connection to database ====================
 def initialize_connection():
     conn = mysql.connector.connect(
         host = "localhost",
@@ -12,7 +13,8 @@ def initialize_connection():
     create_table(cursor)
  
     return conn, cursor
- 
+
+#========================= create new database =================== 
 def create_database(cursor):
     cursor.execute("SHOW DATABASES")
     temp = cursor.fetchall()
@@ -22,7 +24,8 @@ def create_database(cursor):
         cursor.execute("CREATE DATABASE tutorial")
      
     cursor.execute("USE tutorial")
- 
+
+#========================= create new table ====================== 
 def create_table(cursor):  
     cursor.execute("SHOW TABLES")
     temp = cursor.fetchall()
@@ -39,7 +42,7 @@ def create_table(cursor):
             age INT,
             address VARCHAR(200)
          )""")
- 
+#========================== login =============================== 
 def login(cursor, data):
     cursor.execute(f"""SELECT * FROM users WHERE email = '{data["email"]}' 
                        AND password = '{data["password"]}' """)
@@ -47,7 +50,8 @@ def login(cursor, data):
     if cursor.fetchone() != None:
         return True
     return False
- 
+
+#========================== register ============================
 def register(cursor, conn, data):
     print(data)
  
