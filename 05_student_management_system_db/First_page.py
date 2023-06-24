@@ -561,7 +561,7 @@ style = ttk.Style()
 style.configure('Treeview.Heading', font=('chiller',20,'bold'), foreground='blue')
 style.configure('Treeview', font= ('times',15, 'bold'), background='cyan', foreground='black')
 
-
+#----------------------- Set the scroll bar -----------------------
 scroll_x = Scrollbar(show_data_frame, orient= HORIZONTAL)
 scroll_y = Scrollbar(show_data_frame, orient= VERTICAL)
 
